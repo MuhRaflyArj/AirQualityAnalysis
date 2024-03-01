@@ -1,3 +1,7 @@
+## Muhammad Rafly Arjasubrata
+## raflyarj
+## https://muhraflyarj-airqualityanalysis-dashboarddashboard-vdgzsw.streamlit.app/
+
 import pandas as pd
 import streamlit as st
 import os
@@ -61,7 +65,7 @@ def temperature_graph(start_year, end_year, city) :
             ax.plot(filtered_df.index, trend_line(range(len(filtered_df))), linestyle='--', color='red', linewidth=0.5)  # Plot garis trend
             ax.plot(filtered_df.index, filtered_df["TEMP"], linewidth=0.3, zorder=1) # Plot linechart kolom
 
-        plt.suptitle(f"Trend Dari Suh Udara Kota {city}")
+        plt.suptitle(f"Tren Dari Suhu Udara Kota {city}")
         plt.ylabel("Suhu")
         plt.xlabel("Waktu")
 
@@ -101,7 +105,7 @@ def rain_graph(start_year, end_year, city) :
             ax.plot(filtered_df.index, trend_line(range(len(filtered_df))), linestyle='--', color='red', linewidth=0.5)  # Plot garis trend
             ax.plot(filtered_df.index, filtered_df["RAIN"], linewidth=0.3, zorder=1) # Plot linechart kolom
 
-        plt.suptitle(f"Trend Dari Intensitas Hujan Kota {city}")
+        plt.suptitle(f"Tren Dari Intensitas Hujan Kota {city}")
         plt.ylabel("Intensitas Hujan")
         plt.xlabel("Waktu")
 
@@ -141,7 +145,7 @@ def polutant_graph(start_year, end_year, city, polutant) :
             ax.plot(filtered_df.index, trend_line(range(len(filtered_df))), linestyle='--', color='red', linewidth=0.5)  # Plot garis trend
             ax.plot(filtered_df.index, filtered_df[polutant], linewidth=0.3, zorder=1) # Plot linechart kolom
 
-        plt.suptitle(f"Trend Dari Jumlah {polutant} Kota {city}")
+        plt.suptitle(f"Tren Dari Jumlah {polutant} Kota {city}")
         plt.ylabel(f"Jumlah {polutant}")
         plt.xlabel("Waktu")
 
