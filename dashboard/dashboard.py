@@ -7,14 +7,10 @@ import numpy as np
 def load_dataset() :
     # Dictionary kosong untuk menyimpan data setiap kota
     dfs = {}
-    for file_name in os.listdir("./dataset") :
+    for file_name in os.listdir("./dashboard/dataset") :
         # Load dataset
-        dfs[file_name.replace('.csv', '')] = pd.read_csv(f"./dataset/{file_name}")
+        dfs[file_name.replace('.csv', '')] = pd.read_csv(f"./dashboard/dataset/{file_name}")
 
-    # Cek nama kolom dan ukuran data pada setiap dataframe
-    print("Nama Kolom :", ", ".join(dfs["Aotizhongxin"].columns))
-
-    print("\nUkuran Data : ")
     for k, df in dfs.items() :
         dfs[k].set_index('datetime', inplace=True)
 
@@ -154,6 +150,9 @@ def polutant_graph(start_year, end_year, city, polutant) :
     return fig, ax
 
 with st.sidebar :
+    st.subheader("Tugas Akhir Dicoding")
+    st.text("raflyarj")
+
     selected_city = st.selectbox(
         'Pilih Kota',
         (
